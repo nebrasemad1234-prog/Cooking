@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الحجز</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header><h1>الحجز</h1><a href="index.html">الرئيسية</a><a href="menu.html">المنيو</a></header>
+
+<div class="box">
+  <h2>احجز طاولتك</h2>
+  <input id="bName" placeholder="الاسم" required>
+  <input id="bPhone" placeholder="رقم التلفون" required>
+  <input id="bDate" type="date" required>
+  <input id="bTime" type="time" required>
+  <input id="bPeople" type="number" placeholder="عدد الاشخاص" required>
+  <button class="btn-gold" onclick="confirmBooking()">تأكيد الحجز</button>
+</div>
+
+<script>
+function confirmBooking(){
+  let name = document.getElementById('bName').value;
+  let phone = document.getElementById('bPhone').value;
+  let date = document.getElementById('bDate').value;
+  
+  if(name == "" || phone == "" || date == ""){
+    alert("❌ املي كل البيانات لو سمحتي");
+    return;
+  }
+
+  // نخزن الحجز
+  let booking = {name: name, phone: phone, date: date};
+  localStorage.setItem('booking', JSON.stringify(booking));
+  
+  alert("✅ تم تأكيد الحجز بنجاح يا " + name + "\nبنتصل عليك في " + phone);
+  
+  // نفضي الحقول
+  document.getElementById('bName').value = "";
+  document.getElementById('bPhone').value = "";
+}
+</script>
+</body></html>

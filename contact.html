@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اتصل بنا</title><link rel="stylesheet" href="css/style.css"></head><body>
+<header>
+  <h1>مطعم نبراس</h1>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="menu.html">المنيو</a>
+    <a href="booking.html">الحجز</a>
+    <a href="contact.html">اتصل بنا</a>
+  </nav>
+</header>
+
+<div class="box">
+  <h2>تواصل معنا ❤️</h2>
+  <p>عندك استفسار او شكوى؟ رسل لينا طوالي</p>
+  
+  <input id="cName" type="text" placeholder="الاسم">
+  <input id="cEmail" type="email" placeholder="الايميل">
+  <input id="cPhone" type="tel" placeholder="رقم التلفون">
+  <textarea id="cMessage" placeholder="اكتب رسالتك هنا..." rows="4" style="width:100%; padding:12px; border-radius:8px; border:none; margin:8px 0; font-size:16px;"></textarea>
+  
+  <button class="btn-gold" onclick="sendMessage()">ارسال الرسالة</button>
+</div>
+
+<div class="box">
+  <h2>معلوماتنا</h2>
+  <p>📍 **العنوان**: امدرمان - السوق الكبير</p>
+  <p>📞 **تلفون**: 0123456789</p>
+  <p>🕒 **ساعات العمل**: يوميا من 11 صباحا - 12 مساء</p>
+</div>
+
+<script>
+function sendMessage(){
+  let name = document.getElementById('cName').value;
+  let message = document.getElementById('cMessage').
